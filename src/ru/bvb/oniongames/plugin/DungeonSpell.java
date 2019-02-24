@@ -5,11 +5,8 @@ import ru.bvb.oniongames.plugin.crypto.GiftSpell;
 import ru.bvb.oniongames.plugin.crypto.VerifyState;
 import ru.bvb.oniongames.plugin.util.SpellEncoder;
 
-import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.TimeZone;
 
 public class DungeonSpell
 {
@@ -83,7 +80,7 @@ public class DungeonSpell
 	{
 		String appIdKey = SpellEncoder.generateAppId();
 		long randomSeed = SpellEncoder.generateRandomSeed(isJP);
-		long unixTimeMs = new Date().getTime();
+		long unixTimeMs = SpellEncoder.getTime();
 
 		return SpellEncoder.encode(appIdKey, randomSeed, dungeonId, dungeonLevel, unixTimeMs, isJP);
 	}
@@ -93,13 +90,22 @@ public class DungeonSpell
 		if (!isValid)
 			return Dungeons.ERROR_SPELL;
 
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'"); // Quoted "Z" to indicate UTC, no timezone offset
-		df.setTimeZone(TimeZone.getTimeZone("UTC"));
-		String dateAsISO = df.format(spellDate);
+//		DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'"); // Quoted "Z" to indicate UTC, no timezone offset
+//		df.setTimeZone(TimeZone.getTimeZone("UTC"));
+//		String dateAsISO = df.format(spellDate);
 
 		long unixTimestamp = spellDate.getTime() / 1000L;
 
-		return String.format("{\"dungeon_id\": %s, \"level\": %s, \"seed\": %s, \"timestamp\": %s, \"isoDate\": \"%s\", \"localDate\":\"%s\"}",
-				dungeonId, dungeonLevel, seed, unixTimestamp, dateAsISO, spellDate);
+		String resultStr = "{";
+		resultStr += "\"dungeon_id\": " + dungeonId + ", ";
+		resultStr += "\"level\": " + dungeonLevel + ", ";
+		resultStr += "\"seed\": " + seed + ", ";
+		resultStr += "\"timestamp\": " + unixTimestamp + ", ";
+		resultStr += "\"localDate\": " + "\"" + spellDate + "\"";
+		resultStr += "}";
+
+//		return String.format("{\"dungeon_id\": %s, \"level\": %s, \"seed\": %s, \"timestamp\": %s, \"localDate\":\"%s\"}",
+//				dungeonId, dungeonLevel, seed, unixTimestamp, spellDate);
+		return resultStr;
 	}
 }

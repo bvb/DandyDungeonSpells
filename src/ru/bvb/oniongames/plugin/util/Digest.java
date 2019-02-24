@@ -140,7 +140,7 @@ public class Digest
 		}
 
 		Collections.reverse(localArrayList);
-		return String.join("", localArrayList);
+		return joinList("", localArrayList);
 	}
 
 	public static String long71String_HiraganaDECODED(long paramLong)
@@ -165,7 +165,7 @@ public class Digest
 			arrayList.add(arrstring[(int) l]);
 		}
 		Collections.reverse(arrayList);
-		return  String.join("", arrayList);
+		return joinList("", arrayList);
 	}
 
 	public static String md5(String source)
@@ -175,6 +175,8 @@ public class Digest
 			MessageDigest digestMD5 = MessageDigest.getInstance("MD5");
 			digestMD5.update(source.getBytes());
 			byte[] paramString = digestMD5.digest();
+			paramString = forceMakeSigned(paramString);
+
 			StringBuffer resultBuffer = new StringBuffer();
 			int j = paramString.length;
 			int i = 0;
@@ -364,5 +366,41 @@ public class Digest
 			numberOfTimes -= 1;
 		}
 		return str + source;
+	}
+
+	public static byte[] forceMakeSigned(byte[] input)
+	{
+		byte[] result = new byte[input.length];
+		int d;
+
+		for (int i = 0; i < input.length; i++)
+		{
+			byte b = input[i];
+			d = (int)b;
+			d = (d > 128 ? d - 256 : d);
+
+			result[i] = (byte)(d);
+		}
+
+		return result;
+	}
+
+	public static String joinList(String delimiter, ArrayList<String> list)
+	{
+		String result = "";
+
+		for (int i = 0; i < list.size(); i++)
+		{
+			String s = list.get(i);
+
+			result += s;
+
+			if (i != list.size() - 1)
+			{
+				result += delimiter;
+			}
+		}
+
+		return result;
 	}
 }

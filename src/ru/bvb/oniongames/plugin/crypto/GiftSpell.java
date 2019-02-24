@@ -110,7 +110,7 @@ public class GiftSpell
 		return Digest.str71ToInt_Hiragana(var0.substring(6, 10).replaceAll("る", "")) ^ var1 * 1000L + var1 % 1000L;
 	}
 
-	private static char shiftAlphanumeric_OTHER(char var0, int var1)
+	private static int shiftAlphanumeric_OTHER(int var0, int var1)
 	{
 		byte var3 = 0;
 		int var2;
@@ -145,7 +145,7 @@ public class GiftSpell
 					var1 += 36;
 				}
 
-				return var1 < 10 ? (char) (var1 + 48) : (char) (var1 - 10 + 97);
+				return var1 < 10 ? (var1 + 48) : (var1 - 10 + 97);
 			}
 
 			var4 -= 36;
@@ -155,26 +155,34 @@ public class GiftSpell
 	private static String shiftString_OTHER(String var0, long var1, boolean shiftFlag)
 	{
 		char[] chars = var0.toCharArray();
+		int[] codePoints = new int[chars.length];
 
 		for (int i = 0; i < chars.length; ++i)
 		{
 			var1 = simpleRand_OTHER(var1);
 			int var6 = (int) (var1 % 36L);
-			char var4 = chars[i];
+			int var4 = chars[i];
 			if (!shiftFlag)
 			{
 				var6 = -var6;
 			}
 
-			chars[i] = shiftAlphanumeric_OTHER(var4, var6);
+			int result = shiftAlphanumeric_OTHER(var4, var6);
+			codePoints[i] = result;
+
+			chars[i] = (char)result;
 		}
 
-		return new String(chars);
+		return fromCharCode(codePoints);
+	}
+
+	public static String fromCharCode(int... codePoints) {
+		return new String(codePoints, 0, codePoints.length);
 	}
 
 	private static long simpleRand_OTHER(long paramLong)
 	{
-		return 1103515245L * paramLong + 12347L & 0x7FFFFFFF;
+		return ((1103515245L * paramLong) + 12347L) % 0x80000000;
 	}
 
 	public static String substring_OTHER(String source, int beginIndex, int endIndex)

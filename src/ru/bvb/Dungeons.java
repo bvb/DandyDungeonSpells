@@ -1,16 +1,16 @@
 package ru.bvb;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+//import java.util.ArrayList;
+//import java.util.HashMap;
 
 public class Dungeons
 {
-	public static ArrayList<Integer> dungeonIDs = new ArrayList<>();
-	public static HashMap<Integer, String> dungeonIDtoName = new HashMap<>();
-	public static Integer MIN_LEVEL = 99;
-	public static Integer MAX_LEVEL = 99;
+	//public static ArrayList<Integer> dungeonIDs = new ArrayList<>();
+	//public static HashMap<Integer, String> dungeonIDtoName = new HashMap<>();
+	public static int MIN_LEVEL = 1;
+	public static int MAX_LEVEL = 99;
 
-	public static String ERROR_SPELL = String.format("{ \"error\": \"%s\"}", "invalid spell");
+	public static String ERROR_SPELL = "{ \"error\": \"invalid spell\"}";
 
 	public static void init()
 	{
@@ -21,8 +21,8 @@ public class Dungeons
 
 	public static void add(Integer id, String name)
 	{
-		dungeonIDs.add(id);
-		dungeonIDtoName.put(id, name);
+//		dungeonIDs.add(id);
+//		dungeonIDtoName.put(id, name);
 	}
 
 	//King Silamon Tower
