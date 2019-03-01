@@ -108,4 +108,27 @@ public class DungeonSpell
 //				dungeonId, dungeonLevel, seed, unixTimestamp, spellDate);
 		return resultStr;
 	}
+
+	public static String separateKey(String spellKey)
+	{
+		int SEP = 4;
+		String result = "";
+
+		if (spellKey.length() < SEP)
+		{
+			return spellKey;
+		}
+
+		for (int i = 0; i < spellKey.length(); i+=SEP)
+		{
+			result += spellKey.substring(i,i+SEP);
+
+			if (i + SEP < spellKey.length())
+			{
+				result += " ";
+			}
+		}
+
+		return result;
+	}
 }
