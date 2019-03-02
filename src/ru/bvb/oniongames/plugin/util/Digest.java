@@ -41,9 +41,10 @@ public class Digest
 			{
 				stringBuilder.append((char) (n + 87));
 			}
-			l /= 36L;
+			l = l/36L;
 		}
-		return new String(stringBuilder.reverse());
+		StringBuilder resultBuilder = stringBuilder.reverse();
+		return resultBuilder.toString();
 	}
 
 	public static String long71String_Hiragana(long paramLong)

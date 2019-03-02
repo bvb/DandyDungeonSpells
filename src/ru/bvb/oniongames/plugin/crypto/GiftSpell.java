@@ -155,7 +155,7 @@ public class GiftSpell
 	private static String shiftString_OTHER(String var0, long var1, boolean shiftFlag)
 	{
 		char[] chars = var0.toCharArray();
-		int[] codePoints = new int[chars.length];
+//		int[] codePoints = new int[chars.length];
 
 		for (int i = 0; i < chars.length; ++i)
 		{
@@ -168,16 +168,24 @@ public class GiftSpell
 			}
 
 			int result = shiftAlphanumeric_OTHER(var4, var6);
-			codePoints[i] = result;
+//			codePoints[i] = result;
 
 			chars[i] = (char)result;
 		}
 
-		return fromCharCode(codePoints);
+		return fromCharCode(chars);
 	}
 
-	public static String fromCharCode(int... codePoints) {
-		return new String(codePoints, 0, codePoints.length);
+	public static String fromCharCode(char[] chars) {
+		StringBuilder stringBuilder = new StringBuilder();
+
+		for (int i = 0; i < chars.length; i++)
+		{
+			int codePoint = chars[i];
+			stringBuilder.append((char)codePoint);
+		}
+
+		return stringBuilder.toString();
 	}
 
 	private static long simpleRand_OTHER(long paramLong)

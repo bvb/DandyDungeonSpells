@@ -76,6 +76,7 @@ public class SpellEncoder
 			return GiftSpell.create_OTHER(appIdKey, randomSeed, dungeonId, dungeonLevel, unixTimeMs);
 		} catch (ParseException e)
 		{
+			System.out.println(e);
 			//e.printStackTrace();
 		}
 		return null;

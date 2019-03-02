@@ -22,9 +22,18 @@ public class Main
 
 	public static void main(String[] args)
 	{
+		if (args == null)
+		{
+			return;
+		}
+
 		if (args.length == 0 || args[0].equals("--help") || args[0].equals("-h"))
 		{
 			System.out.println(info);
+		}
+		else if (tryToTest(args))
+		{
+			//ok
 		}
 		else if (tryToRenewSpell(args))
 		{
@@ -42,6 +51,18 @@ public class Main
 		{
 			//ok
 		}
+	}
+
+	private static boolean tryToTest(String[] args)
+	{
+		if (!(args[0].equals("--test") || args[0].equals("-t")))
+		{
+			return false;
+		}
+
+		String spellKey = "BQT21YGTCIMYUPDN4J3AC589";
+		printTest(spellKey);
+		return true;
 	}
 
 	private static boolean tryToRenewSpell(String[] args)
@@ -120,6 +141,20 @@ public class Main
 	{
 		String result = getSpellData(spellKey);
 		System.out.println(result);
+	}
+
+	public static void printTest(String spellKey)
+	{
+		SpellEncoder.useFakeData = true;
+
+		DungeonSpell spell = new DungeonSpell();
+		spell.decodeKey(spellKey);
+		String key = spell.generateNewKey();
+
+		SpellEncoder.useFakeData = false;
+
+		System.out.println(key);
+		System.out.println(key.equals("879XFLENA08CETEPIS5B37E9"));
 	}
 
 	public static void printRenewSpell(String spellKey)
