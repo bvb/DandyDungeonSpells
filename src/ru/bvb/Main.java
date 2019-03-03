@@ -160,7 +160,6 @@ public class Main
 	public static void printRenewSpell(String spellKey)
 	{
 		String result = getRenewSpell(spellKey);
-		//System.out.println(DungeonSpell.separateKey(result));
 		System.out.println(result);
 	}
 
@@ -169,7 +168,6 @@ public class Main
 		for (int i = 0; i < times; i++)
 		{
 			String key = getGenerateSpellCode(isJP, dungeonId, dungeonLevel);
-			//System.out.println(DungeonSpell.separateKey(key));
 			System.out.println(key);
 		}
 	}
@@ -204,26 +202,5 @@ public class Main
 			return Dungeons.ERROR_SPELL;
 		}
 		return newKey;
-	}
-
-	private static long generateSimpleRandom(long paramLong)
-	{
-//		BigInteger a = BigInteger.valueOf(1103515245L);
-//		BigInteger offset = BigInteger.valueOf(12347L);
-//		BigInteger mod = BigInteger.valueOf(0x7FFFFFFF);
-
-//		BigDecimal a = BigDecimal.valueOf(1103515245L);
-//		BigDecimal offset = BigDecimal.valueOf(12347L);
-//		BigDecimal mod = BigDecimal.valueOf(0x80000000);
-
-//		BigDecimal bigInt = BigDecimal.valueOf(paramLong);
-//		bigInt = bigInt.multiply(a);
-//		bigInt = bigInt.add(offset);
-//		bigInt = bigInt.remainder(mod);
-
-//		return bigInt.longValue();
-
-		//return ((1103515245L * paramLong) + 12347L) & 0x7FFFFFFF;
-		return ((1103515245L * paramLong) + 12347L) % 0x80000000;
 	}
 }
