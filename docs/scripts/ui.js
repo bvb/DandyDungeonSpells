@@ -24,18 +24,18 @@ function fillDungeonLevelsList(listId) {
 function printDecodeResult(spellCode)
 {
     var $sp = $("#decode_spell");
-    $("p.decode_result").remove();
-    $sp.append("<p class='decode_result'>" + spellCode + "</p>");
+    $("blockquote.decode_result").remove();
+    $sp.append("<blockquote class='decode_result'><p>" + spellCode + "</p></blockquote>");
 }
 
 function printSpellGenerateResult(spellCodes)
 {
     var $sp = $("#generate_spell");
-    $("p.generate_result").remove();
+    $("blockquote.generate_result").remove();
 
     for (var i = 0; i < spellCodes.length; i++) {
         var code = spellCodes[i];
-        $sp.append("<p class='generate_result'>" + code + "</p>");
+        $sp.append("<blockquote class='generate_result'><p>" + code + "</p></blockquote>");
     }
 }
 
@@ -84,4 +84,7 @@ ru.bvb.oniongames.plugin.crypto.GiftSpell.simpleRand_OTHER = function (paramLong
     return new BigNumber(paramLong).multipliedBy(1103515245).plus(12347).mod(0x80000000).toNumber();
 };
 
-ru.bvb.Main.printTest("BQT21YGTCIMYUPDN4J3AC589");
+//EN codes generation is correct
+//ru.bvb.Main.printTest("BQT21YGTCIMYUPDN4J3AC589");
+
+//JP codes generation is wrong

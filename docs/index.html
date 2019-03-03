@@ -7,7 +7,9 @@
     <meta name="author" content="Vladislav B">
     <meta name="description" content="DandyDungeon spell codes generator">
     <title>DandyDungeon | Spell Generator</title>
-    <!--<link rel="icon" href="https://milligram.github.io/images/icon.png">-->
+
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+
     <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">-->
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./dist/milligram.min.css">
@@ -15,125 +17,50 @@
 </head>
 
 <body>
-
-    <!-- used to show the jQuery candy (see the QuickStart class) -->
-    <!--<p id="target"></p>-->
-
-    <!--<script type="text/javascript" src="../target/js/quickstart/QuickStart.js"></script>-->
     <script type="text/javascript" src='./scripts/jquery.min.js'></script>
     <script type="text/javascript" src='./scripts/bignumber.js'></script>
-    <!--<script type="text/javascript"-->
-            <!--src="../../../dev/jsweet/jsweet-quickstart/webapp/j4ts-0.3.0-SNAPSHOT/bundle.js"></script>-->
-    <!--<script type="text/javascript" src="../../../dev/jsweet/jsweet-quickstart/target/js/bundle.js"></script>-->
+    <script type="text/javascript" src="./scripts/jsweet/j4ts-0.3.0-SNAPSHOT/bundle.js"></script>
+    <script type="text/javascript" src="./scripts/decoder/bundle.js"></script>
 
-    <main class="wrapper">
+    <section class="container" id="generate_spell">
+        <h3 class="title">Generate spell code</h3>
+        <form id="decode_spell_form">
+            <fieldset>
 
-        <!--<a href="http://milligram.github.io" title="Milligram | A minimalist CSS framework." target="_blank"><img class="thumbnail" src="https://milligram.github.io/images/thumbnail.png" alt="Milligram | A minimalist CSS framework."></a>-->
+                <label for="dungeonIdSelect">Dungeon</label>
+                <select id="dungeonIdSelect"></select>
 
+                <input id="dungeonIdField" type="text" placeholder="or custom id...">
 
+                <label for="dungeonLevelSelect">Level</label>
+                <select id="dungeonLevelSelect"></select>
 
-        <!--+ "prints out spellCodes from input isJapan, dungeonId, level, N times\n"-->
-        <!--+ "&#45;&#45;create 0 424242 22 2\n"-->
-        <!--+ "-c 0 424242 22 2\n"-->
-        <!--+ "\n"-->
-        <!--+ "prints out spellCodes for all special dungeons isJapan, N times, level"-->
-        <!--+ "&#45;&#45;all 0 42 22\n";-->
+                <label for="resultCodeCountSelect">X times</label>
+                <select id="resultCodeCountSelect"></select>
 
-        <!--<form>-->
-            <!--<fieldset>-->
-                <!--<label for="nameField">Name</label>-->
-                <!--<input type="text" placeholder="CJ Patoilo" id="nameField">-->
-                <!--<label for="ageRangeField">Age Range</label>-->
-                <!--<select id="ageRangeField">-->
-                    <!--<option value="0-13">0-13</option>-->
-                    <!--<option value="14-17">14-17</option>-->
-                    <!--<option value="18-23">18-23</option>-->
-                    <!--<option value="24+">24+</option>-->
-                <!--</select>-->
-                <!--<label for="commentField">Comment</label>-->
-                <!--<textarea placeholder="Hi CJ …" id="commentField"></textarea>-->
-                <!--<div class="float-right">-->
-                    <!--<input type="checkbox" id="confirmField">-->
-                    <!--<label class="label-inline" for="confirmField">Send a copy to yourself</label>-->
-                <!--</div>-->
-                <!--<input class="button-primary" type="submit" value="Send">-->
-            <!--</fieldset>-->
-        <!--</form>-->
-        <section class="container" id="generate_spell">
-            <h5 class="title">Generate spell code</h5>
-            <form id="decode_spell_form">
-                <fieldset>
+                <!-- broken for now -->
+                <!--<div class="float-right">
+                    <input type="checkbox" id="isJapanCode" disabled="disabled">
+                    <label class="label-inline" for="isJapanCode">Japan code</label>
+                </div>-->
+                <input class="button-primary" id="generate_spell_button" type="submit" value="Generate">
 
-                    <label for="dungeonIdSelect">Dungeon</label>
-                    <select id="dungeonIdSelect"></select>
+            </fieldset>
+        </form>
+    </section>
 
-                    <input id="dungeonIdField" type="text" placeholder="or custom id...">
+    <section class="container" id="decode_spell">
+        <h5 class="title">Decode or renew spell code</h5>
+        <form id="generate_spell_form">
+            <fieldset>
+                <input type="text" placeholder="Spell code here..." id="spellCodeField">
+                <input class="button-primary" id="decode_spell_button" type="submit" value="Decode">
+                <input class="button-primary" id="renew_spell_button" type="submit" value="Renew">
+            </fieldset>
+        </form>
+    </section>
 
-                    <label for="dungeonLevelSelect">Level</label>
-                    <select id="dungeonLevelSelect"></select>
-
-                    <label for="resultCodeCountSelect">X times</label>
-                    <select id="resultCodeCountSelect"></select>
-
-                    <div class="float-right">
-                        <input type="checkbox" id="isJapanCode">
-                        <label class="label-inline" for="isJapanCode">Japan code</label>
-                    </div>
-                    <input class="button-primary" id="generate_spell_button" type="submit" value="Generate">
-
-                </fieldset>
-            </form>
-        </section>
-
-
-        <section class="container" id="decode_spell">
-            <h5 class="title">Decode or renew spell code</h5>
-            <form id="generate_spell_form">
-                <fieldset>
-                    <input type="text" placeholder="Spell code here..." id="spellCodeField">
-                    <input class="button-primary" id="decode_spell_button" type="submit" value="Decode">
-                    <input class="button-primary" id="renew_spell_button" type="submit" value="Renew">
-                </fieldset>
-            </form>
-        </section>
-
-        <!--<section class="container" id="examples">-->
-            <!--<h5 class="title">Examples</h5>-->
-            <!--<p>You can view more examples of using Milligram.</p>-->
-            <!--<p>-->
-            <!--<ul>-->
-                <!--<li><a href="https://milligram.github.io/#getting-started" title="Getting Started">Getting Started</a></li>-->
-                <!--<li><a href="https://milligram.github.io/#typography" title="Typography">Typography</a></li>-->
-                <!--<li><a href="https://milligram.github.io/#blockquotes" title="Blockquotes">Blockquotes</a></li>-->
-                <!--<li><a href="https://milligram.github.io/#buttons" title="Buttons">Buttons</a></li>-->
-                <!--<li><a href="https://milligram.github.io/#lists" title="Lists">Lists</a></li>-->
-                <!--<li><a href="https://milligram.github.io/#forms" title="Forms">Forms</a></li>-->
-                <!--<li><a href="https://milligram.github.io/#tables" title="Tables">Tables</a></li>-->
-                <!--<li><a href="https://milligram.github.io/#grids" title="Grids">Grids</a></li>-->
-                <!--<li><a href="https://milligram.github.io/#codes" title="Codes">Codes</a></li>-->
-                <!--<li><a href="https://milligram.github.io/#utilities" title="Utilities">Utilities</a></li>-->
-                <!--<li><a href="https://milligram.github.io/#tips" title="Tips">Tips</a></li>-->
-                <!--<li><a href="https://milligram.github.io/#browser-support" title="Browser Support">Browser Support</a></li>-->
-            <!--</ul>-->
-            <!--</p>-->
-        <!--</section>-->
-
-        <!--<section class="container" id="contributing">-->
-            <!--<h5 class="title">Contributing</h5>-->
-            <!--<p>Want to contribute? Follow these <a href="https://github.com/milligram/milligram/blob/master/.github/contributing.md" title="Contributing">recommendations</a>.</p>-->
-        <!--</section>-->
-
-        <!--<footer class="footer">-->
-            <!--<section class="container">-->
-                <!--<p>Designed with ♥ by <a target="_blank" href="http://cjpatoilo.com" title="CJ Patoilo">CJ Patoilo</a>. Licensed under the <a target="_blank" href="https://github.com/milligram/milligram#license" title="MIT License">MIT License</a>.</p>-->
-            <!--</section>-->
-        <!--</footer>-->
-
-    </main>
-
-    <script src="scripts/jsweet/j4ts-0.3.0-SNAPSHOT/bundle.js"></script>
-    <script src="scripts/decoder/bundle.js"></script>
-    <script src="scripts/ui.js"></script>
+    <script type="text/javascript" src="scripts/ui.js"></script>
 
 </body>
 </html>
