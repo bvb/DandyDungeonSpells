@@ -654,7 +654,9 @@ var ru;
                             }
                             ;
                             var resultBuilder = stringBuilder.reverse();
-                            return resultBuilder.toString();
+                            var result = resultBuilder.toString();
+                            result = Digest.reverseIt(result);
+                            return result;
                         };
                         Digest.long71String_Hiragana = function (paramLong) {
                             var arrayOfString = (function (s) { var a = []; while (s-- > 0)
@@ -974,6 +976,16 @@ var ru;
                             }
                             ;
                             return result;
+                        };
+                        Digest.reverseIt = function (source) {
+                            var i = 0;
+                            var len = source.length;
+                            var dest = new java.lang.StringBuilder(len);
+                            for (i = (len - 1); i >= 0; i--) {
+                                dest.append(source.charAt(i));
+                            }
+                            ;
+                            return dest.toString();
                         };
                         return Digest;
                     }());

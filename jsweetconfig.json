@@ -1,0 +1,10 @@
+{
+	"@Replace('return 42;')": {
+		"include": [ "ru.bvb.Main.generateSimpleRandom(..)" ]
+	},
+	
+	"REMOVE_ME_@Replace('return new BigNumber(paramLong).multipliedBy(1103515245).plus(12347).mod(0x80000000).toNumber();')": {
+		"REMOVE_ME_include" : [ "ru.bvb.oniongames.plugin.crypto.GiftSpell.simpleRand_OTHER(..)"]
+	}
+	
+}

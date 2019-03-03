@@ -13,4 +13,9 @@ hs_err_pid*
 .idea
 *.iml
 
+.jsweet
+.tsc-rootfile.js
+.tsc-rootfile.js.map
+/docs/scripts/jsweet/jquery-1.10.0-SNAPSHOT
+
 out
