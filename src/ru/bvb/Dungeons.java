@@ -21,100 +21,102 @@ public class Dungeons
 
 		//by rarity:
 		//2
-		add(0, "TycoonTower of Tokyo");
-		add(2302, "TycoonTower of NYC");
-		add(0, "TycoonTower of Cairo");
-		add(0, "TycoonTower of Paris");
-		add(0, "TycoonTower of London");
-		add(0, "MtGoldenest of Tokyo");
-		add(0, "MtGoldenest of NYC");
-		add(2202, "MtGoldenest of Cairo");
-		add(0, "MtGoldenest of Paris");
-		add(0, "MtGoldenest of London");
-		add(0, "Gold wood of Tokyo");
-		add(0, "Gold wood of NYC");
-		add(0, "Gold wood of Cairo");
-		add(0, "Gold wood of Paris");
-		add(0, "Gold wood of London");
+		add(2302, "TycoonTower of Tokyo ★★");
+		add(2302, "TycoonTower of NYC ★★");
+		add(2302, "TycoonTower of Cairo ★★");
+		add(2302, "TycoonTower of Paris ★★");
+		add(2302, "TycoonTower of London ★★");
+
+		add(2202, "MtGoldenest of Tokyo ★★");
+		add(2202, "MtGoldenest of NYC ★★");
+		add(2202, "MtGoldenest of Cairo ★★");
+		add(2202, "MtGoldenest of Paris ★★");
+		add(2202, "MtGoldenest of London ★★");
+
+		add(2102, "Gold wood of Tokyo ★★");
+		add(2102, "Gold wood of NYC ★★");
+		add(2102, "Gold wood of Cairo ★★");
+		add(2102, "Gold wood of Paris ★★");
+		add(2102, "Gold wood of London ★★");
 
 		//3
-		add(0, "Gold Slime Tower");
+		add(0, "Gold Slime Tower ★★★");
 
 		//4
-		add(0, "Sliamond Tower");
+		add(0, "Sliamond Tower ★★★★");
 
 		//5
-		add(4405, "King Sliamond Tower");
+		add(4405, "King Sliamond Tower ★★★★★");
 
 		//1
-		add(101, "Picnic Grove");
-		add(201, "Goblin House");
-		add(0, "Slimeville");
-		add(401, "Skittery Park");
-		add(0, "Spell Academy");
+		add(101, "Picnic Grove ★");
+		add(201, "Goblin House ★");
+		add(0, "Slimeville ★");
+		add(401, "Skittery Park ★");
+		add(0, "Spell Academy ★");
 
 		//2
-		add(5302, "Mimictown");
-		add(0, "Boneboat");
-		add(0, "Ghost House");
-		add(0, "Flame Cave");
+		add(5302, "Mimictown ★★");
+		add(0, "Boneboat ★★");
+		add(0, "Ghost House ★★");
+		add(0, "Flame Cave ★★");
 
 		//3
-		add(0, "Samurai Dojo");
-		add(0, "House of Nanjaro");
-		add(0, "Weekends only");
-		add(5403, "Royal Rat Trove");
-		add(5603, "Aja's Tower");
-		add(0, "Dragon Castle");
-		add(0, "Fort Goblin");
-		add(0, "Weird Woody Woods");
-		add(1503, "Slimurai Hamlet");
-		add(0, "Beegarden");
-		add(0, "Sorcery School");
-		add(0, "Previously aka Spell Academy");
+		add(0, "Samurai Dojo ★★★");
+		add(0, "House of Nanjaro ★★★");
+		add(0, "Weekends only ★★★");
+		add(5403, "Royal Rat Trove ★★★");
+		add(5603, "Aja's Tower ★★★");
+		add(0, "Dragon Castle ★★★");
+		add(0, "Fort Goblin ★★★");
+		add(0, "Weird Woody Woods ★★★");
+		add(1503, "Slimurai Hamlet ★★★");
+		add(0, "Beegarden ★★★");
+		add(0, "Sorcery School ★★★");
+		add(0, "Previously aka Spell Academy ★★★");
 
 		//4
-		add(0, "King Ghost's Palace");
-		add(0, "Mimiqueen's Villa");
-		add(0, "Asparaguster's Ranch");
-		add(6504, "Cap'n Bone's Big Boat");
-		add(6204, "Fire Golem Cave");
+		add(0, "King Ghost's Palace ★★★★");
+		add(0, "Mimiqueen's Villa ★★★★");
+		add(0, "Asparaguster's Ranch ★★★★");
+		add(6504, "Cap'n Bone's Big Boat ★★★★");
+		add(6204, "Fire Golem Cave ★★★★");
 
 		//5
-		add(6705, "Mysterious Hard Labor Zone");
-		add(9305, "Legendary Dragonkeep");
-		add(4105, "Holy Thelomon Castle");
-		add(3505, "Garbi Desert");
+		add(6705, "Mysterious Hard Labor Zone ★★★★★");
+		add(9305, "Legendary Dragonkeep ★★★★★");
+		add(4105, "Holy Thelomon Castle ★★★★★");
+		add(3505, "Garbi Desert ★★★★★");
 
 		//3
-		add(0, "Morning Porkpark");
-		add(3103, "Pignoon Paradise");
-		add(0, "Bistro Porkpork");
-		add(0, "Pignite Farm");
+		add(0, "Morning Porkpark ★★★");
+		add(3103, "Pignoon Paradise ★★★");
+		add(0, "Bistro Porkpork ★★★");
+		add(0, "Pignite Farm ★★★");
 
 		//3
-		add(1603, "Bonefield");
-		add(8103, "Toilet Island");
-		add(0, "Wacky Hanami Party");
-		add(0, "Snowbytown Square");
+		add(1603, "Bonefield ★★★");
+		add(8103, "Toilet Island ★★★");
+		add(0, "Wacky Hanami Party ★★★");
+		add(0, "Snowbytown Square ★★★");
 
 		//4
-		add(7003, "Mamayan Ruins");
-		add(7103, "Heck Yeah High School");
-		add(7203, "Turtle Bath");
-		add(7303, "Crocodile Eighteen");
-		add(1703, "Pumpkin Patch");
+		add(7003, "Mamayan Ruins ★★★★");
+		add(7103, "Heck Yeah High School ★★★★");
+		add(7203, "Turtle Bath ★★★★");
+		add(7303, "Crocodile Eighteen ★★★★");
+		add(1703, "Pumpkin Patch ★★★★");
 
 		//5
-		add(4704, "Onion Hotel");
-		add(4005, "Maestro Nobiyo's Farm");
-		add(4505, "Danmaku Castle");
-		add(5705, "Santa Flophouse");
-		add(6005, "Lavender Avenue Shop");
-		add(5905, "Raid Tower");
-		add(4205, "Fort Supopon");
+		add(4704, "Onion Hotel ★★★★★");
+		add(4005, "Maestro Nobiyo's Farm ★★★★★");
+		add(4505, "Danmaku Castle ★★★★★");
+		add(5705, "Santa Flophouse ★★★★★");
+		add(6005, "Lavender Avenue Shop ★★★★★");
+		add(5905, "Raid Tower ★★★★★");
+		add(4205, "Fort Supopon ★★★★★");
 
-		add(4805, "Heaven's Door");
+		add(4805, "Heaven's Door ★★★★★");
 	}
 
 	public static void add(Integer id, String name)

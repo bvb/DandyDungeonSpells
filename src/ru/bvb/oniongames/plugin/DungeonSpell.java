@@ -98,6 +98,7 @@ public class DungeonSpell
 
 		String resultStr = "{";
 		resultStr += "\"dungeon_id\": " + dungeonId + ", ";
+		resultStr += "\"dungeon_name\": \"" + getDungeonName(dungeonId) + "\", ";
 		resultStr += "\"level\": " + dungeonLevel + ", ";
 		resultStr += "\"seed\": " + seed + ", ";
 		resultStr += "\"timestamp\": " + unixTimestamp + ", ";
@@ -107,6 +108,19 @@ public class DungeonSpell
 //		return String.format("{\"dungeon_id\": %s, \"level\": %s, \"seed\": %s, \"timestamp\": %s, \"localDate\":\"%s\"}",
 //				dungeonId, dungeonLevel, seed, unixTimestamp, spellDate);
 		return resultStr;
+	}
+
+	public static String getDungeonName(int dungeonID)
+	{
+		for (int i = 0; i < Dungeons.dungeonIDs.size(); i++)
+		{
+			if (dungeonID == Dungeons.dungeonIDs.get(i))
+			{
+				return Dungeons.dungeonNames.get(i);
+			}
+		}
+
+		return "UNKNOWN_DUNGEON";
 	}
 
 	public static String separateKey(String spellKey)
