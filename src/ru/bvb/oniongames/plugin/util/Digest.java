@@ -43,8 +43,9 @@ public class Digest
 			}
 			l = l/36L;
 		}
-		StringBuilder resultBuilder = stringBuilder.reverse();
-		return resultBuilder.toString();
+		String result = stringBuilder.toString();
+		result = reverseIt(result);
+		return result;
 	}
 
 	public static String long71String_Hiragana(long paramLong)
@@ -403,5 +404,17 @@ public class Digest
 		}
 
 		return result;
+	}
+
+	public static String reverseIt(String source) {
+		int i = 0;
+		int len = source.length();
+		StringBuilder dest = new StringBuilder(len);
+
+		for (i = (len - 1); i >= 0; i--){
+			dest.append(source.charAt(i));
+		}
+
+		return dest.toString();
 	}
 }
