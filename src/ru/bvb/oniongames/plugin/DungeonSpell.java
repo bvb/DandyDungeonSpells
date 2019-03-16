@@ -112,6 +112,11 @@ public class DungeonSpell
 
 	public static String getDungeonName(int dungeonID)
 	{
+		if (dungeonID >= 100)
+		{
+			dungeonID = (int)(dungeonID / 100)*100;
+		}
+
 		for (int i = 0; i < Dungeons.dungeonIDs.size(); i++)
 		{
 			if (dungeonID == Dungeons.dungeonIDs.get(i))

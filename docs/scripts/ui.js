@@ -8,7 +8,6 @@ function fillCountOptionsList(listId, from, to) {
 }
 
 function fillDungeonLevelsList(listId) {
-    ru.bvb.Dungeons.init();
 
     var dungeonIDs = ru.bvb.Dungeons.dungeonIDs.array;
     var dungeonNames = ru.bvb.Dungeons.dungeonNames.array;
@@ -18,6 +17,18 @@ function fillDungeonLevelsList(listId) {
         var dungeonName = dungeonNames[i];
 
         $(listId).append('<option value="' + dungeonId + '">' + dungeonName + '</option>');
+    }
+}
+
+function fillDungeonRarityList(listId) {
+    var rarityIDs = ru.bvb.Dungeons.rarityIDs.array;
+    var rarityNames = ru.bvb.Dungeons.rarityNames.array;
+
+    for (var i = 0; i < rarityIDs.length; i++) {
+        var id = rarityIDs[i];
+        var name = rarityNames[i];
+
+        $(listId).append('<option value="' + id + '">' + name + '</option>');
     }
 }
 
@@ -59,7 +70,15 @@ $("#renew_spell_button").click(function (event) {
 $("#generate_spell_button").click(function (event) {
 
     var customDungeonId = parseInt($("#dungeonIdField").val());
-    var dungeonId = !isNaN(customDungeonId) ? customDungeonId : parseInt($("#dungeonIdSelect").val());
+    var dungeonId = 0;
+    if (isNaN(customDungeonId))
+    {
+        dungeonId = parseInt($("#dungeonIdSelect").val()) + parseInt($("#dungeonRaritySelect").val());
+    }
+    else
+    {
+        dungeonId = customDungeonId;
+    }
 
     var isJP = $("#isJapanCode").prop('checked');
     var dungeonLevel = parseInt($("#dungeonLevelSelect").val());
@@ -77,7 +96,10 @@ $("#generate_spell_button").click(function (event) {
 
 fillCountOptionsList("#dungeonLevelSelect", 1, 99);
 fillCountOptionsList("#resultCodeCountSelect", 1, 99);
+
+ru.bvb.Dungeons.init();
 fillDungeonLevelsList("#dungeonIdSelect");
+fillDungeonRarityList("#dungeonRaritySelect");
 
 //JS hack for correct int64 random generation
 ru.bvb.oniongames.plugin.crypto.GiftSpell.simpleRand_OTHER = function (paramLong) {
