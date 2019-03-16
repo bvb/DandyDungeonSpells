@@ -26,6 +26,7 @@ var ru;
                 Dungeons.rarityIDs_$LI$().add(1);
                 Dungeons.rarityIDs_$LI$().add(2);
                 Dungeons.rarityIDs_$LI$().add(3);
+                Dungeons.rarityIDs_$LI$().add(4);
                 Dungeons.rarityIDs_$LI$().add(5);
                 Dungeons.rarityNames_$LI$().add("\u2605");
                 Dungeons.rarityNames_$LI$().add("\u2605\u2605");

@@ -27,6 +27,7 @@ public class Dungeons
 		rarityIDs.add(1);
 		rarityIDs.add(2);
 		rarityIDs.add(3);
+		rarityIDs.add(4);
 		rarityIDs.add(5);
 		rarityNames.add("★");
 		rarityNames.add("★★");
